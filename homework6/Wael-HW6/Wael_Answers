@@ -1,0 +1,104 @@
+Homework 6
+
+1. Which of the following statements will potentially execute? And give values for A, B and C that will make the statement execute:
+    if A is true AND B is true AND C is true THEN color="blue"
+    else if A is true AND B is false AND C is false THEN color="red"
+    else if A is true AND A is false THEN color="orange"
+    else if A is true AND B is false AND C is true THEN color="green"
+    else color="yellow"
+    Answer:
+    color = "blue" when A = true, B = true and C = true.
+    color = "red" when A = true, B = false and C = false.
+    color is never going to be "orange" because A cann't be true and false at the same time.
+    color = "yellow" when A = false and for whatever value B and C has.
+
+2. Which of the following statements will potentially execute? And give values for A, B and C that will make the statement execute:
+    if A is true OR A is false OR B is true OR C is true THEN color="blue"
+    else if A is true OR B is false OR C is false THEN color="red"
+    else if A is true OR B is false OR C is true THEN color="green"
+    else color="yellow"
+    Answer:
+    if we neglect that A could be undefined and assume A could only be true or false then the only statement will execute is color = "blue"
+    as the first condition will always be true
+    
+3. Which of the following statements will potentially execute? And give values for A, B and C that will make the statement execute:
+    5.1. if (A is true AND B is true) OR (A is false AND B is true) THEN color="blue"
+        Answer: color="blue" when A = true and B =true, or when A = false and B = true.
+    5.2. if (A is true AND B is false) OR (A is NOT true AND A is false) THEN color="green"
+        Answer: color="green" when A = true and B =false, or when A = false.
+    5.3. if (A is true AND B is false OR A is false) OR (A is either true or false) THEN color="yellow"
+        Answer: color="yellow" always excute because A is either true or false statement is true for whatever values A and B is.
+    5.4. if (false AND true) OR (false OR true) THEN color="white"
+        Answer: color = "white" always excute because (false Or true) statement is true anyways
+    
+4. Open the file index4.html and apply the following changes on it:
+    4.1. Invert the table (so instead of displaying the headers in the first column, display them in the first row).
+    4.2. Make all table headers bold using CSS.
+    4.3. Style the nav tag as follows:
+        4.3.1. All options must be links (create contact.html and gallery.html).
+        4.3.2. Instead of using a bar (|), use the HTML code for a bar (&nbsp; is the HTML code for space).
+        4.3.3. Links should all appear without underline.
+        4.3.4. The option for current page should not be a link, should be bold and should be surrounded by a box (borders).
+    4.4. Change the style of EVERY LI so that the default . is changed to a custom image instead (pick your image).
+    4.5. Make the content of the LI linkable to the respective paragraph on the page.
+    4.6. ALL P tags should be italics by default.
+    4.7. The Pargraph 2 P tag should be in red.
+    4.8. The titles of both paragraphs should be using H2.
+    4.9. Replace the default icon for LI for the fruits section with a fruit icon for the respective fruit (for the orange listing, show an orange icon, etc.)
+    4.10. Make the last two P tags display inline.
+    4.11. Take out all the styling from the html file into TWO CSS files:
+        1. style1.css will house all the styling for default tags (P, H1, TABLE, etc.)
+        2. style2.css will house all the custom styling (styles for classes and ids)
+
+5. Read the following program:
+
+variable i = 0
+WHILE i is less than 5 EXECUTE THESE LINES
+    PRINT i
+    increment i by 1
+    GO TO WHILE ABOVE
+END OF WHILE
+
+Answer the following questions:
+
+    5.1. How many times are the lines inside the WHILE loop executed?
+    5.2. What is the final value of i?
+
+6. Read the following program:
+
+ variable x = 0
+ variable y = 10
+ variable i = 0
+ variable holder = 0
+ 
+ WHILE i does not have the same value as y EXECUTE THESE LINES
+    if (i divides 2 without a remainder) THEN holder = existing value of holder + i 
+    increment i by 1
+    GO TO WHILE ABOVE
+ END OF WHILE
+ 
+ Answer the following:
+    5.1. What is the final value of "holder" when the program is done running?
+    5.2. What is the final value of "i" when the program is done running?
+    
+7. Read the following program:
+
+variable x = 0
+variable y = x - 5
+variable z = y
+
+variable d = x + 5
+variable e = d * 5
+variable z = e - d 
+variable x = x + 2
+
+Print all the final variable values at the end of the program
+
+8. Create an alias for a linux commmand, that uses a pipe to display the number of linux commands you executed, along with the date and time.
+Answer: first I have to excute HISTTIMEFORMAT="%d/%m/%y %T " then excute history
+this will not work in pipe you have to excute them once at a time
+
+9. Question 8 prints the date/time and the command. Create a command that reverses the order (it takes this output and displays the command and THEN the date/time).
+Answer: 
+
+history | while read line ; do arr=(${line// / }); echo "${arr[3]} ${arr[2]} ${arr[1]}" ; done

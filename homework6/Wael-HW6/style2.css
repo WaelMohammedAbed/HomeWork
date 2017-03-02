@@ -1,0 +1,31 @@
+.header{
+    font-weight: bold;
+}
+
+.current_page{
+    font-weight: bold;
+    border: 1px solid red;
+}
+
+#orange {
+    list-style-image: url('img/orange.png');
+}
+#apple {
+    list-style-image: url('img/apple.jpg');
+}
+#strawberry {
+    list-style-image: url('img/strawberry.jpg');
+}
+#blueberry {
+    list-style-image: url('img/blueberry.png');
+}
+#grapes {
+    list-style-image: url('img/grapes.jpg');
+}
+
+.red{
+    color:red;
+}
+.inline{
+    display: inline;
+}
