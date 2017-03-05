@@ -7,10 +7,16 @@ Homework 6
     else if A is true AND B is false AND C is true THEN color="green"
     else color="yellow"
     Answer:
-    color = "blue" when A = true, B = true and C = true.
-    color = "red" when A = true, B = false and C = false.
-    color is never going to be "orange" because A cann't be true and false at the same time.
-    color = "yellow" when A = false and for whatever value B and C has.
+    
+   A    B   C   color
+   1    1   1   blue
+   1    1   0   yellow
+   1    0   1   green
+   1    0   0   red
+   0    1   1   yellow
+   0    1   0   yellow
+   0    0   1   yellow
+   0    0   0   yellow
 
 2. Which of the following statements will potentially execute? And give values for A, B and C that will make the statement execute:
     if A is true OR A is false OR B is true OR C is true THEN color="blue"
@@ -18,18 +24,47 @@ Homework 6
     else if A is true OR B is false OR C is true THEN color="green"
     else color="yellow"
     Answer:
-    if we neglect that A could be undefined and assume A could only be true or false then the only statement will execute is color = "blue"
-    as the first condition will always be true
+   A    B   C   color
+   1    1   1   blue
+   1    1   0   blue
+   1    0   1   blue
+   1    0   0   blue
+   0    1   1   blue
+   0    1   0   blue
+   0    0   1   blue
+   0    0   0   blue
+    
     
 3. Which of the following statements will potentially execute? And give values for A, B and C that will make the statement execute:
     5.1. if (A is true AND B is true) OR (A is false AND B is true) THEN color="blue"
-        Answer: color="blue" when A = true and B =true, or when A = false and B = true.
+        Answer: 
+    A   B   color
+    1   1   blue
+    1   0   ---  
+    0   1   blue
+    0   0   ---
     5.2. if (A is true AND B is false) OR (A is NOT true AND A is false) THEN color="green"
-        Answer: color="green" when A = true and B =false, or when A = false.
+        Answer: 
+    A   B   color
+    1   1   ---
+    1   0   green
+    0   1   green
+    0   0   green
+    
     5.3. if (A is true AND B is false OR A is false) OR (A is either true or false) THEN color="yellow"
-        Answer: color="yellow" always excute because A is either true or false statement is true for whatever values A and B is.
+        Answer:
+    A   B   color
+    1   1   yellow
+    1   0   yellow
+    0   1   yellow
+    0   0   yellow
+        
     5.4. if (false AND true) OR (false OR true) THEN color="white"
-        Answer: color = "white" always excute because (false Or true) statement is true anyways
+    A   B   color
+    1   1   white
+    1   0   white
+    0   1   white
+    0   0   white
     
 4. Open the file index4.html and apply the following changes on it:
     4.1. Invert the table (so instead of displaying the headers in the first column, display them in the first row).
@@ -62,7 +97,9 @@ END OF WHILE
 Answer the following questions:
 
     5.1. How many times are the lines inside the WHILE loop executed?
+    5
     5.2. What is the final value of i?
+    5
 
 6. Read the following program:
 
@@ -79,7 +116,9 @@ Answer the following questions:
  
  Answer the following:
     5.1. What is the final value of "holder" when the program is done running?
+    20
     5.2. What is the final value of "i" when the program is done running?
+    10
     
 7. Read the following program:
 
