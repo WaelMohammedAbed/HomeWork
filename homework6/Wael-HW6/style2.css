@@ -2,9 +2,28 @@
     font-weight: bold;
 }
 
-.current_page{
+/* unvisited link */
+nav a:link {
+    text-decoration: none;
+}
+
+/* visited link */
+nav a:visited {
+    text-decoration: none;
+}
+
+/* mouse over link */
+nav a:hover {
+    text-decoration: none;
+}
+
+/* selected link */
+nav a:active {
+    text-decoration: none;
     font-weight: bold;
     border: 1px solid red;
+    
+    
 }
 
 #orange {
