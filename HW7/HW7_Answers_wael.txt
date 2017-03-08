@@ -1,0 +1,280 @@
+Homework 7
+Write pseudocode to solve the following problems (You must start with understanding the question, then outline the approach on a piece of paper, and only then, sit down to translate your approach/solution/algorithm/logic to pseudocode):
+1. You are given an array of elements [17, 24, 4, 26, 19, 30, 2, 66, 40]. Print out all odd number.
+/////////////////////////// Answer:
+variable a = [17, 24, 4, 26, 19, 30, 2, 66, 40]
+variable i=0
+ WHILE i less than the value of variable a elements length ( which is in our case 9)
+    if (a[i] divides 2 has a remainder) THEN 
+   	print a[i]
+   increment i by 1
+    GO TO WHILE ABOVE
+ END OF WHILE
+2. Modify the pseudocode in 1, and also print the minimum of such odd numbers.
+///////////////////////////Answer:
+variable a = [17, 24, 4, 26, 19, 30, 2, 66, 40]
+variable i=0
+variable holder
+ WHILE i less than the value of variable a elements length ( which is in our case 9)
+    if (a[i] divides 2 has a remainder) THEN 
+{
+	if(holder has no value) then
+		holder = a[i]  // this will put the first odd value in holder
+	else if ( holder  is greater than a[i]) then
+		holder =a[i]  // this will put the minimum value in holder
+   	print a[i]
+}
+   increment i by 1
+    GO TO WHILE ABOVE
+ END OF WHILE
+print that the minimum odd value in this array is the value of holder
+
+3. Modify the pseudocode in 2 such that the code that determines whether the number is odd or even should be in a separate function called: isOdd, and it should return true if it is odd, and false if it is even.
+///////////////////////////////Answer:
+
+function isOdd ( parameter a)
+if (a divides 2 has a remainder) THEN 
+return true
+else 
+return false
+end function
+
+ variable a = [17, 24, 4, 26, 19, 30, 2, 66, 40]
+variable i=0
+variable holder
+ WHILE i less than the value of variable a elements length ( which is in our case 9)
+    if (isOdd(a[i])) THEN 
+{
+	if(holder has no value) then
+		holder = a[i]  // this will put the first odd value in holder
+	else if ( holder  is greater than a[i]) then
+		holder =a[i]  // this will put the minimum value in holder
+   	print a[i]
+}
+   increment i by 1
+    GO TO WHILE ABOVE
+ END OF WHILE
+print that the minimum odd value in this array is the value of holder
+
+4. Modify the pseudocode in 3 so the program prints two lists, a list of odd numbers with the minimum number, and a list of even numbers with the minimum even number.
+///////////////////////////Answer:
+function isOdd ( parameter a)
+if (a divides 2 has a remainder) THEN 
+return true
+else 
+return false
+end function
+
+ variable a = [17, 24, 4, 26, 19, 30, 2, 66, 40]
+array odd,even;
+variable i=0
+variable minOdd,minEven
+ WHILE i less than the value of variable a elements length ( which is in our case 9)
+    if (isOdd(a[i])) THEN 
+      {
+	if(minOdd has no value) then
+		minOdd = a[i]  // this will put the first odd value in holder
+	else if (minOdd is greater than a[i]) then
+		minOdd =a[i]  // this will put the minimum value in holder
+   	odd.add(a[i])
+       }
+else if (not isOdd(a[i])) THEN 
+      {
+	if(minEven has no value) then
+		minEven = a[i]  // this will put the first odd value in holder
+	else if (minEven is greater than a[i]) then
+		minEven =a[i]  // this will put the minimum value in holder
+   	even.add(a[i])
+       }
+
+   increment i by 1
+    GO TO WHILE ABOVE
+ END OF WHILE
+print even array for all even number and minEven for the minimum even number of them
+print odd array for all odd number and minOdd for the minimum even number of them
+5. Convert the program in 4 to JavaScript.
+/////////////////////////////Answer:
+function isOdd (a)
+{
+if ((a%2) != 0)
+return true
+else 
+return false
+}
+
+a = [17, 24, 4, 26, 19, 30, 2, 66, 40];
+var odd=[];
+var even=[];
+var i=0;
+var minOdd,minEven;
+ while (i< a.length){
+    if (isOdd(a[i]))
+      {
+	if(minOdd == null)
+		minOdd = a[i];  
+	else if ( minOdd > a[i])
+		  minOdd =a[i];  
+   	odd.push(a[i]);
+       }
+else if (!isOdd(a[i]))
+      {
+	if(minEven == null)
+		minEven = a[i]; 
+	else if ( minEven>a[i])
+		minEven =a[i];  
+   	even.push(a[i]);
+       }
+   i=i+1;
+}
+console.log(minEven);
+console.log(minOdd);
+console.log(odd);
+console.log(even);
+6. Modify the program in 5, and add two new functions. One that will sort the elements, and the second one will reverse the elements
+before printing (so before printing the list of odd numbers for example, sort then reverse then print).
+////////////////////////////Answer:
+function isOdd (a)
+{
+if ((a%2) != 0)
+return true
+else 
+return false
+}
+function MySort (a)
+{
+var i=0;
+
+ while (i< a.length-1){
+   var j=i+1
+    while (j< a.length){
+      if(a[i]>a[j])
+      {
+        var temp=a[i];
+        a[i]=a[j];
+        a[j]=temp;
+      }
+   j++;
+  }
+  i++;
+ }
+return a
+}
+function MyReverse (a)
+{
+var i=0;
+
+ while (i< a.length/2){
+        var temp=a[i];
+        a[i]=a[a.length-i-1];
+        a[a.length-i-1]=temp;
+   
+  i++;
+ }
+return a
+
+}
+
+a = [17, 24, 4, 26, 19, 30, 2, 66, 40];
+var odd=[];
+var even=[];
+var i=0;
+var minOdd,minEven;
+ while (i< a.length){
+    if (isOdd(a[i]))
+      {
+	if(minOdd == null)
+		minOdd = a[i];  
+	else if ( minOdd > a[i])
+		  minOdd =a[i];  
+   	odd.push(a[i]);
+       }
+else if (!isOdd(a[i]))
+      {
+	if(minEven == null)
+		minEven = a[i]; 
+	else if ( minEven>a[i])
+		minEven =a[i];  
+   	even.push(a[i]);
+       }
+   i=i+1;
+}
+console.log(minEven);
+console.log(minOdd);
+console.log(MyReverse(MySort(odd)));
+console.log(MyReverse(MySort(even)));
+7. Create a JavaScript program that will implement the following logic:
+ We have 5 variables, A,B,C,D and E. All of them are numbers (can be positive or negative). I would like the following to happen:
+  - if A is even, I would like to print "BLUE"
+  - if B is even, and C is bigger than 5, then I would like to print "GREEN"
+  - if B is even, but C is less than 5, I would like then to check if E is odd then print "YELLOW"
+  - if A is even AND B is even, but C is a negative number, then print "ORANGE"
+  - if C + D + E is bigger than A + C then print "PURPLE"
+  - if I've already printed two colors, and C is odd or C is less than B, then print "RED"
+
+/////////////////////////// Answer:
+// the following 5 lines used to let the user enter values for A,B,C,D and E
+var A = window.prompt("Set value of A", "numbers (can be positive or negative");
+var B = window.prompt("Set value of B", "numbers (can be positive or negative");
+var C = window.prompt("Set value of C", "numbers (can be positive or negative");
+var D = window.prompt("Set value of D", "numbers (can be positive or negative");
+var E = window.prompt("Set value of E", "numbers (can be positive or negative");
+
+console.log("A=",A);
+console.log("B=",B);
+console.log("C=",C);
+console.log("D=",D);
+console.log("E=",E);
+var printNumber=0;
+
+if(A%2==0)
+{
+  console.log("BLUE");
+  printNumber++;
+}
+if(B%2==0 && C>5)
+{
+  console.log("GREEN");
+  printNumber++;
+}
+if(B%2==0 && C<5 && E%2==1)
+{
+  console.log("YELLOW");
+  printNumber++;
+}
+if(A%2==0 && B%2==0 && C<0)
+{
+  console.log("ORANGE");
+  printNumber++;
+}
+if((C+D+E)>(A+C))
+{
+  console.log("PURPLE");
+  printNumber++;
+}
+if(printNumber>1&&(C%2==1||C<B))
+{
+  console.log("RED");
+  printNumber++;
+}
+8. Create a linux command (alias it) that will print all the commands from history, along with their date and time, as long as the length of the command does not exceed 6 characters.
+///////////////////////////// Answer
+alias sixCommand="history | grep '\w\{1,6\}'"
+
+
+9. Write ONE piped command that will print out the number of lines that have the word "function" in them, from www.google.com. This will essentially show you the number of lines that have JavaScript functions. Now use of ; or non-piped approach.
+/////////////////////////////Answer: 
+wget www.googl.com
+grep -o function index.html | wc -l 
+
+
+10. Look at the image (floating_image.png). Create a similar effect using HTML/CSS (any text that floats to the left of the image, and wraps it). Any image is fine.
+/////////////////////////////// Answer:
+ see folder Q10 which contain the HTML and CSS files
+ 
+11. Create an HTML/CSS file(s) that will apply the style of a horizontal scroll bar, and vertical scroll bar to any P tag based only using classes (horizontal and vertical class).
+/////////////////////////////// Answer:
+ see folder Q11 which contain the HTML and CSS files
+Read:
+ - http://www.w3schools.com/js/js_operators.asp
+ - http://www.w3schools.com/js/js_comparisons.asp
+ - OPTIONAL: http://www.w3schools.com/css/css_icons.asp
