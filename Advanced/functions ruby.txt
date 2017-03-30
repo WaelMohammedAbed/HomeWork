@@ -1,3 +1,14 @@
+# sort using recursive function
+
+def sortRecursive(myArray, sortedArray=[])
+  sortedArray.push(myArray.min)
+  myArray.delete_at(myArray.index(myArray.min))
+  if(myArray.length>0)
+  sortRecursive(myArray, sortedArray) 
+  end
+  return sortedArray
+end
+
 # sort function
 
 def sort(myArray)
@@ -61,3 +72,6 @@ puts fact(5)
 a=[6,8,3,10,2,1,5,4,3,2]
 
 print sort(a)
+b=[6,8,3,10,2,1,5,4,3,2]
+puts ""
+print sortRecursive(b)
