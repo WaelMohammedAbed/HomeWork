@@ -1,0 +1,51 @@
+///////// function power
+function power(number,exponential)
+
+{
+
+  result=1;
+
+  for(i =0 ; i< exponential; i++)
+
+  {
+
+    result*=number;
+
+  }
+
+  return result;
+
+}
+
+
+
+////////////// function factorial
+
+
+function factorial(number)
+
+{
+
+  result=1;
+
+  for(i =number ; i> 0; i--)
+
+  {
+
+    result*=i;
+
+  }
+
+  return result;
+
+}
+
+
+
+
+//////////// testing fucntions
+
+
+console.log(power(4,2));
+
+console.log(factorial(5));

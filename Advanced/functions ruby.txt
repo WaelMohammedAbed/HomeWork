@@ -1,0 +1,29 @@
+
+# power function using loops
+def power number, exponential
+    result=1
+    exponential.times {result*=number}
+    return result
+end
+
+# power function using ** built in ruby operator
+def simplePower number, exponential
+    
+    return number**exponential
+end
+
+# factorial function 
+def factorial number
+    
+    result=1
+    number.times {|x| result*=x+1}
+    return result
+end
+
+
+# cod to test functions
+result = power 3, 2
+puts result
+
+puts simplePower 3,2
+puts factorial 5
