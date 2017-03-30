@@ -1,3 +1,21 @@
+# sort function
+
+def sort(myArray)
+   
+   myArray[0...-1].each.with_index do |value,i|
+       myArray[i+1..-1].each.with_index(i+1) do |value2,j|
+           
+           if myArray[i]>myArray[j]
+               
+               temp=myArray[i]
+               myArray[i]=myArray[j]
+               myArray[j]=temp
+           end
+       end
+   end
+   return myArray
+end
+
 
 # power function using loops
 def power number, exponential
@@ -39,3 +57,7 @@ puts result
 puts simplePower 3,2
 puts factorial 5
 puts fact(5)
+
+a=[6,8,3,10,2,1,5,4,3,2]
+
+print sort(a)
