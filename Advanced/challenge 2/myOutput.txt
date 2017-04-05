@@ -1,0 +1,31 @@
+///////////////// this is the output I got from my cloud9 vm after excuting the file by writting ruby "filename"
+
+
+wael1abed:~/workspace $ ruby test.rb                                                                                                                             
+waelPrompt>>ls
+test/  myTest/  .c9/  log/  db/  check.rb  README.md  test.rb  tmp/  Gemfile  bin/  app/  config/  vendor/  README.rdoc  config.ru  Rakefile  .gitignore  public/  lib/  Gemfile.lock    
+waelPrompt>>grep ls myTest/waa.txt
+ls
+ls lsssls
+waelPrompt>>head myTest/waa.txt
+wael mohameed
+abed 
+ls
+ls lsssls
+
+
+what is going on
+waelPrompt>>head -n 2 myTest/waa.txt
+wael mohameed
+abed 
+waelPrompt>>tail -n 2 myTest/waa.txt
+
+what is going on
+waelPrompt>>whoami
+ubuntu
+waelPrompt>>cp myTest/waa.txt wael.txt
+waelPrompt>>ls
+test/  myTest/  .c9/  log/  db/  wael.txt  check.rb  README.md  test.rb  tmp/  Gemfile  bin/  app/  config/  vendor/  README.rdoc  config.ru  Rakefile  .gitignore  public/  lib/  Gemfile.lock    
+waelPrompt>>mv wael.txt myTest/wael2.txt
+waelPrompt>>
+wael1abed:~/workspace $ 
