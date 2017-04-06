@@ -1,0 +1,28 @@
+///////////////// this is the output I got from my cloud9 vm after excuting the file by writting ruby "filename"
+///////////////// I tried these combinations I didn't check everything :)
+waelPrompt>>tail -n 5 myTest/wael2.txt|head|grep ls
+ls
+ls lsssls
+waelPrompt>>tail myTest/wael2.txt|head -n 4|grep ls
+ls
+ls lsssls
+waelPrompt>>tail myTest/wael2.txt|head -n 4|grep ls|tail -n 1
+ls lsssls
+waelPrompt>>grep ls myTest/wael2.txt|tail -n 1
+ls lsssls
+waelPrompt>>
+
+
+
+
+
+
+////////////////////////this is the content of file wael2.txt /////////////////////////
+wael mohameed
+abed 
+ls
+ls lsssls
+
+
+what is going on
+///////////////////////////////////////////////////////////////////////////////////////
