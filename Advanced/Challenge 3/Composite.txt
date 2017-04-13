@@ -1,3 +1,10 @@
+=begin
+The goal of the Composite pattern is to make the leaf objects more or less indistinguishable from the composite objects.
+You will know that you need to use the Composite pattern when you are trying to build a hierarchy or tree of objects,
+ and you do not want the code that uses the tree to constantly have to worry about whether it is dealing with a single
+ object or a whole bushy branch of the tree.
+=end
+
 # class person which has variables that every person has name,gender,weight, height
 class Person
  attr_accessor :name,:gender,:weight,:height #using attr_accessor instead of make getter and setter function for each variables

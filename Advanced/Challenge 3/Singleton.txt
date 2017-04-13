@@ -1,0 +1,41 @@
+=begin
+Singleton design pattern used to make just one instance 
+of the class through all your application, and this is 
+very common in game senario as the player is remain the same instance in all levels of the game 
+=end
+
+class Player
+    @speed
+    @direction
+  def initialize
+    @speed=0
+    @direction="up"
+  end
+
+  @@instance = Player.new
+
+  def self.instance
+    return @@instance
+  end
+
+  def setSpeed=(speed)
+    @speed=speed
+    end
+def setDirection=(dir)
+    @direction=dir
+    end
+    
+    def getSpeed
+        @speed
+    end
+    def getDirection
+        @direction
+    end
+
+  private_class_method :new
+end
+
+player1=Player.instance
+player2=Player.instance
+player1.setSpeed=11
+puts player2.getSpeed # althought we didn't change player2 the output is 11 as player1 and player2 is the same instance
