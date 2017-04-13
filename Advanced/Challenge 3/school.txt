@@ -1,0 +1,121 @@
+# class person which has variables that every person has name,gender,weight, height
+class Person
+ attr_accessor :name,:gender,:weight,:height #using attr_accessor instead of make getter and setter function for each variables
+
+ def initialize(name,gender,weight,height)# initialize function
+   @name = name
+   @gender = gender
+   @height = height
+   @weight = weight
+ end
+ def to_s # override to_s function to return full description of the person
+   
+    "Person Name : #{name}\nGender : #{gender}\nHeight : #{height}\nWeight : #{weight}\n"
+  end
+ 
+end
+
+class Student < Person # inherit person and add attributes related with student
+ 
+      attr_accessor :stage,:division,:studentID
+     def initialize(name,gender,weight,height,studentID,stage=1,division="A")
+         super(name,gender,weight,height) # call super initialize function from person class
+     @stage = stage
+     @division = division
+     @studentID = studentID
+ end
+ 
+  
+  def to_s # override to_s function to return full description of the Student
+   
+    "Student Name : #{name}\nGender : #{gender}\nHeight : #{height}\nWeight : #{weight}\nStage :  #{stage}\nDivision :  #{division}\nStudent ID :  #{studentID}\n"
+  end
+  
+ 
+end
+class Teacher < Person # inherit person and add attributes related with Teacher
+ 
+      attr_accessor :degree,:yearsOfExperience
+     def initialize(name,gender,weight,height,degree,yearsOfExperience=0)
+         super(name,gender,weight,height) # call super initialize function from person class
+     @degree = degree
+     @yearsOfExperience = yearsOfExperience
+ end
+ 
+  
+  def to_s # override to_s function to return full description of the Teacher
+   
+    "Teacher Name : #{name}\nGender : #{gender}\nHeight : #{height}\nWeight : #{weight}\nDegree :  #{degree}\nYears of Experience :  #{yearsOfExperience}\n"
+  end
+  
+ 
+end
+class Admin < Teacher # inherit from Teacher and add attributes related with Admin as the Admin is also a teacher
+ 
+      attr_accessor :responsibility
+     def initialize(name,gender,weight,height,responsibility,degree,yearsOfExperience=0)
+         super(name,gender,weight,height,degree,yearsOfExperience) # call super initialize function from Teacher class
+     @responsibility = responsibility
+ end
+ 
+  
+  def to_s # override to_s function to return full description of the Admin
+   
+    "Admin Name : #{name}\nGender : #{gender}\nHeight : #{height}\nWeight : #{weight}\nDegree :  #{degree}\nYears of Experience :  #{yearsOfExperience}\nResponsibility : #{responsibility}"
+  end
+  
+ 
+end
+
+# the following lines is just to test the output
+someone=Person.new "someone","male",55,175
+sami = Admin.new "Ahmed Sami","Male",80,185,"Head of Computer Department","PHD in computer science",10
+idrees = Teacher.new "Wael M. Abed","Male",82,179,"MSc in computer science",5
+wael = Student.new "Wael M. Abed","Male",82,179,"STD00000001"
+puts someone # we can call just the object name which by default will call to_s function that we already override it in our class
+puts "-----------------------"
+puts sami
+puts "-----------------------"
+puts idrees
+puts "-----------------------"
+puts wael
+puts "-----------------------"
+wael.studentID="STD----1"
+puts wael
+
+# the out put is 
+#Person Name : someone
+#Gender : male
+#Height : 175
+#Weight : 55
+#-----------------------
+#Admin Name : Ahmed Sami
+#Gender : Male
+#Height : 185
+#Weight : 80
+#Degree :  PHD in computer science
+#Years of Experience :  10
+#Responsibility : Head of Computer Department
+#-----------------------
+#Teacher Name : Wael M. Abed
+#Gender : Male
+#Height : 179
+#Weight : 82
+#Degree :  MSc in computer science
+#Years of Experience :  5
+#-----------------------
+#Student Name : Wael M. Abed
+#Gender : Male
+#Height : 179
+#Weight : 82
+#Stage :  1
+#Division :  A
+#Student ID :  STD00000001
+#-----------------------
+#Student Name : Wael M. Abed
+#Gender : Male
+#Height : 179
+#Weight : 82
+#Stage :  1
+#Division :  A
+#Student ID :  STD----1
