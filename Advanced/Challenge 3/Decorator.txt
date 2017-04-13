@@ -1,0 +1,42 @@
+=begin
+
+decorator design pattern solve the problem of inherit from long chain of classes so for example if you have an object and you need
+to add new feature to it you need to create a class and inherit from the base class, and every time you add new feature you have to inherit a new class
+decorator solve this by adding it dynamically to the object as the example below explain
+instead of create class doubleNitro or class NitroBoost we just pass the instance of the object from class to another and adding the feature
+=end
+
+class Car
+    @speed
+  def top_speed
+    @speed=100 
+  end 
+end 
+
+class Nitro
+
+  def initialize(decoratedCar)
+    @decoratedCar = decoratedCar
+  end 
+    
+ 
+  def top_speed 
+   
+    @decoratedCar.top_speed + 30
+  end
+end
+  
+class Boost
+  def initialize(decoratedCar)
+    @decoratedCar = decoratedCar
+  end
+   
+  def top_speed
+    @decoratedCar.top_speed + 50
+  end
+end 
+puts Nitro.new(Car.new).top_speed #130 
+
+puts Nitro.new(Nitro.new(Car.new)).top_speed #160 
+
+puts Boost.new(Nitro.new(Car.new)).top_speed #180
